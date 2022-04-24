@@ -1,7 +1,7 @@
 name: fade_scroll_app_bar
 description: Best package ever
-version: 0.0.3
-homepage: https://github.com/sametcilingir
+version: 0.0.4
+homepage: https://github.com/sametcilingir/mypackage
 
 environment:
   sdk: ">=2.16.2 <3.0.0"
