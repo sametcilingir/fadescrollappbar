@@ -156,12 +156,13 @@ class FadeOutScrollWidget extends StatefulWidget {
   final double fullOpacityOffset;
   final Widget child;
 
-  FadeOutScrollWidget({
+  const FadeOutScrollWidget({
+    Key? key,
     required this.scrollController,
     required this.child,
     this.zeroOpacityOffset = 0,
     this.fullOpacityOffset = 0,
-  });
+  }) : super(key: key);
 
   @override
   _FadeOutScrollWidgetState createState() => _FadeOutScrollWidgetState();
@@ -190,26 +191,28 @@ class _FadeOutScrollWidgetState extends State<FadeOutScrollWidget> {
   }
 
   double _calculateOpacity() {
-    if (widget.fullOpacityOffset == widget.zeroOpacityOffset)
+    if (widget.fullOpacityOffset == widget.zeroOpacityOffset) {
       return 0;
-    else if (widget.fullOpacityOffset > widget.zeroOpacityOffset) {
+    } else if (widget.fullOpacityOffset > widget.zeroOpacityOffset) {
       // fading in
-      if (_offset <= widget.zeroOpacityOffset)
+      if (_offset <= widget.zeroOpacityOffset) {
         return 1;
-      else if (_offset >= widget.fullOpacityOffset)
+      } else if (_offset >= widget.fullOpacityOffset) {
         return 0;
-      else
+      } else {
         return (_offset - widget.fullOpacityOffset) /
             (widget.zeroOpacityOffset - widget.fullOpacityOffset);
+      }
     } else {
       // fading out
-      if (_offset <= widget.fullOpacityOffset)
+      if (_offset <= widget.fullOpacityOffset) {
         return 0;
-      else if (_offset >= widget.zeroOpacityOffset)
+      } else if (_offset >= widget.zeroOpacityOffset) {
         return 1;
-      else
+      } else {
         return (_offset - widget.zeroOpacityOffset) /
             (widget.fullOpacityOffset - widget.zeroOpacityOffset);
+      }
     }
   }
 
