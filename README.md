@@ -1,39 +1,80 @@
-<!-- 
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages). 
+# Fade Scroll App Bar
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages). 
--->
-
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+With this package, you can create a large appbar and make a smooth fade effect by swiping.
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
-
-## Getting started
-
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+![App Screenshot 0](https://media.giphy.com/media/CO3BUMI5iMZaJoFwzJ/giphy.gif)
+![App Screenshot 1](https://media.giphy.com/media/JG3tCaczuslaDRLoY0/giphy.gif)
+![App Screenshot 2](https://media.giphy.com/media/v3QRwYr54KZ16A97Uq/giphy.gif)
 
 ## Usage
-
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder. 
-
+First you should create ScrollController.
 ```dart
-const like = 'sample';
+  final ScrollController _scrollController = ScrollController();
+
 ```
 
-## Additional information
+And adding in it.
 
-TODO: Tell users more about the package: where to find more information, how to 
-contribute to the package, how to file issues, what response they can expect 
-from the package authors, and more.
+```dart
+FadeScrollAppBar(
+        scrollController: _scrollController,
+        appBarLeading: Icon(Icons.flutter_dash_outlined),
+        appBarTitle: Text('Cool App Bar'),
+        appBarForegroundColor: Colors.amber,
+        pinned: true,
+        fadeOffset: 120,
+        expandedHeight: 250,
+        backgroundColor: Colors.white,
+        fadeWidget: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text("Really Good App Bar",
+                style: Theme.of(context).textTheme.headline2?.copyWith(
+                      color: Colors.black,
+                    )),
+          ],
+        ),
+        bottomWidgetHeight: 40,
+        bottomWidget: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Chip(
+              label: Text("Great"),
+              backgroundColor: Colors.amber,
+              side: BorderSide(
+                color: Colors.white,
+                width: 1,
+              ),
+            ),
+            SizedBox(width: 10),
+            Chip(
+              label: Text("App Bar"),
+              backgroundColor: Colors.amber,
+              side: BorderSide(
+                color: Colors.white,
+                width: 1,
+              ),
+            ),
+          ],
+        ),
+        child: ListView.builder(
+          itemCount: 100,
+          itemBuilder: (BuildContext context, int index) {
+            return Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Container(
+                height: 100,
+                width: 300,
+                color: Colors.blue,
+              ),
+            );
+          },
+        ),
+      ),
+```
+
+
