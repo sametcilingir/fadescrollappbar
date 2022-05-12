@@ -1,4 +1,4 @@
-part of mypackage;
+part of fade_scroll_app_bar;
 
 class SliverAppBarWidget extends StatelessWidget {
   const SliverAppBarWidget({

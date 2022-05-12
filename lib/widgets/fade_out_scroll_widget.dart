@@ -1,4 +1,4 @@
-part of mypackage;
+part of fade_scroll_app_bar;
 
 class FadeOutScrollWidget extends StatefulWidget {
   final ScrollController scrollController;

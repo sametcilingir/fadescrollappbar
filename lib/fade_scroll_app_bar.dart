@@ -1,10 +1,10 @@
-library mypackage;
+library fade_scroll_app_bar;
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-part '../widgets/fade_out_scroll_widget.dart';
-part '../widgets/sliver_app_bar_widget.dart';
+part 'widgets/fade_out_scroll_widget.dart';
+part 'widgets/sliver_app_bar_widget.dart';
 
 class FadeScrollAppBar extends StatefulWidget {
   final Widget? appBarLeading;

@@ -1,6 +1,6 @@
 name: fade_scroll_app_bar
 description: You can create a large appbar and make a smooth fade effect by swiping.
-version: 0.0.6
+version: 0.0.7
 homepage: https://github.com/sametcilingir/fadescrollappbar
 
 environment:
